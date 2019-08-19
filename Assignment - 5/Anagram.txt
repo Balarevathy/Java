@@ -1,0 +1,73 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the anagram function below.
+    static int anagram(String s) {
+        int splitNum = 0;
+        int rCnt = 0;
+        int firstIndx = 0,secIndx=0;
+        int strLen = s.length();
+        String s1;
+        String s2;
+        if (strLen%2 ==0)
+        {
+        splitNum=strLen/2;
+        s1=s.substring(0,splitNum);
+        s2=s.substring(splitNum);
+        char[] chr1= s1.toLowerCase().toCharArray();
+        char[] chr2= s2.toLowerCase().toCharArray();
+        Arrays.sort(chr1);
+        Arrays.sort(chr2);
+        s1 = String.valueOf(chr1);
+        s2 = String.valueOf(chr2);
+        System.out.println("String 1 :"+s1);
+        System.out.println("String 2 :"+s2);
+            
+
+        for (int i = 0; i< splitNum;i++)
+        {
+            if (s1.charAt(i) != s2.charAt(i))
+            {
+            rCnt++;
+            }
+
+        }
+
+        }
+        else
+        {
+        rCnt = -1;
+        }
+       System.out.println("required Cnt : " + rCnt);
+        return rCnt;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int q = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int qItr = 0; qItr < q; qItr++) {
+            String s = scanner.nextLine();
+
+            int result = anagram(s);
+
+            bufferedWriter.write(String.valueOf(result));
+            bufferedWriter.newLine();
+        }
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
