@@ -1,0 +1,15 @@
+Enter card Number:
+1000
+Entered card Number:1000
+Press 1 for Balance Enquiry.
+Press 2 for Withdrawal. 
+
+2
+Enter Withdrawal Amount : 
+
+3000
+Withdrawal Amount 3000.0
+Available Balance 50000.0
+Service Charge Applied 20.0
+CardNum	Name	Bank	Balance	Type
+1000	kam	axis	46980	visa
